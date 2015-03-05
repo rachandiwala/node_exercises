@@ -3,41 +3,50 @@
 //    empty array `[]`
 // -> In the definition of machine set a property 'capabilities', set it to 
 //    an empty object `{}`
-__
+
+
+var machine = {
+  parts: [],
+  capabilities: {}
+};
+
+var robot = {};
+var vehicle = {};
+
 
 // -> Let's set the prototype of both robot and vehicle to machine
 robot.__proto__ = machine;
 vehicle.__proto__ = machine;
 
 // -> What is `robot.parts`?
-claim(robot.parts, __);
+claim(robot.parts, []);
 
 // -> What is `vehicle.parts`?
-claim(vehicle.parts, __);
+claim(vehicle.parts, []);
 
 // -> What is `robot.capabilities`?
-claim(robot.capabilities, __);
+claim(robot.capabilities, {});
 
 // -> What is `vehicle.capabilities`?
-claim(vehicle.capabilities, __);
+claim(vehicle.capabilities, {});
 
 // -> Let's add a 'core' part to robot
 robot.parts.push('core');
 
 // -> What is `robot.parts` now?
-claim(robot.parts, __);
+claim(robot.parts, ['core']);
 
 // -> What is `vehicle.parts` now?
-claim(vehicle.parts, __);
+claim(vehicle.parts, ['core']);
 
 // -> Let's set an ability to vehicle
 vehicle.capabilities.fly = true;
 
 // -> What is `robot.capabilities` now?
-claim(robot.capabilities, __);
+claim(robot.capabilities, {fly: true});
 
 // -> What is `vehicle.capabilities` now?
-claim(vehicle.capabilities, __);
+claim(vehicle.capabilities,{fly: true});
 
 
 // ------------------------------------------------
@@ -47,3 +56,44 @@ module.exports = {
 	vehicle:    vehicle,
 	robot:    robot
 }
+
+
+/* Solution from Planetproto:
+
+var machine = {
+        parts: [],
+        capabilities: {}
+    };
+
+    var vehicle = {};
+    var robot = {};
+
+    robot.__proto__ = machine;
+    vehicle.__proto__ = machine;
+
+    // -> What is `robot.parts`?
+    claim(robot.parts, []);
+
+    // -> What is `vehicle.parts`?
+    claim(vehicle.parts, []);
+
+    claim(robot.capabilities, {});
+    claim(vehicle.capabilities, {});
+
+    robot.parts.push('core');
+
+    claim(robot.parts, ['core']);
+    claim(vehicle.parts, ['core']);
+
+    vehicle.capabilities.fly = true;
+
+    claim(robot.capabilities, {fly: true});
+    claim(vehicle.capabilities, {fly: true});
+
+    module.exports = {
+        machine:   machine,
+        vehicle:   vehicle,
+        robot:     robot
+    }
+*/
+
