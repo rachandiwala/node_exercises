@@ -1,3 +1,8 @@
+//To run the program:   planetproto run 020.js
+//To verify and submit: planetproto verify 020.js
+
+
+
 // -> Create a machine object
 //    with a property motors = 4
 
