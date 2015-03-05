@@ -1,4 +1,10 @@
-// console.log("HELLO WORLD");
+// Ex: 1 Hello world
+
+ console.log("HELLO WORLD");
+
+
+// Ex: 2 process.argv
+
 
 var total = 0;
 
